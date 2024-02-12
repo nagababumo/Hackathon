@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Detail</title>
+    <script>
+
+    function submitAnswer() {
+
+    var answerText = document.getElementById("answer-text").value;
+
+    var answerDisplay = document.getElementById("answer-display");
+
+    var newAnswer = document.createElement("p");
+
+    newAnswer.textContent = answerText;
+
+    answerDisplay.appendChild(newAnswer);
+
+    document.getElementById("answer-text").value = '';
+
+    }
+
+    </script>
+    <style>                                                                                                                                                                                
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .question-details {
+            background-color: #ffffff7a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: inset 0px 0px 10px 13px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin:30px;
+        }
+
+            .question-details p {
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .question-details strong {
+                font-weight: bold;
+                color: #007bff; /* Blue color for strong text */
+            }
+
+        .answer-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #answer-text {
+            width: calc(100% - 40px); /* Adjusted width */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+            #answer-text::placeholder {
+                color: #999;
+            }
+
+            #answer-text:focus {
+                border-color: #007bff;
+            }
+
+        #submit-answer-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px; /* Adjusted padding */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+            #submit-answer-btn:hover {
+                background-color: #0056b3;
+            }
+
+        #answer-display p {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #333;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Question Details</h1>
+    <div class="question-details">
+        <p><strong>Question Text:</strong> {{ question.question_text }}</p>
+        <p><strong>Files:</strong></p>
+        {% for file in question.files %}
+        <p>- {{ file }}</p>
+        {% if file.endswith("jpg") or file.endswith("jpeg") or file.endswith("png") or file.endswith("gif") %}
+        <img src="{{ url_for('get_image', image_id=file) }}" alt="Image">
+        {% endif %}
+        {% endfor %}
+    </div>
+    <!-- Answer input and submit -->
+    <div class="answer-container">
+        <textarea id="answer-text" placeholder="Enter your answer here..."></textarea>
+        <button id="submit-answer-btn" onclick="submitAnswer()">Submit Answer</button>
+    </div>
+    <!-- Display answers -->
+    <div id="answer-display"></div>
+</body>
+</html>

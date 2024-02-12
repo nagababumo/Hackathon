@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Foldit', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #23063a;
+    padding: 1rem;
+}
+
+.navbar-brand h1 {
+    color: white;
+    margin: 0;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.hero {
+    background-image: url('/static/landingbackground.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.hero-content h1 {
+    color: rgb(0, 165, 248);
+    font-size: '1.5em';
+    margin: 3px;
+}
+
+.hero-content p {
+    color: rgb(0, 0, 0);
+    margin: 3px;
+}
+
+.hero-content button {
+    background-color: #ffe100;
+    color: rgb(0, 41, 95);
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 12px;
+    margin: 3px;
+}
+
+.left-div {
+    width: 50%;
+    font-size: x-large;
+    margin: 12px;
+    padding: 12px;
+    
+
+}
+
+.right-div {
+    width: 50%;
+}

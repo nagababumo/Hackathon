@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>
+        /* Style for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px; /* Add some padding for better visual appearance */
+            box-sizing: border-box;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            background-attachment: fixed;
+        }
+
+        /* Style for the heading */
+        h1 {
+            text-align: center;
+            font-size: 48px; /* Increase font size for the title */
+            margin-bottom: 20px;
+            color: #fff; /* Heading color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect for better visibility */
+        }
+
+        /* Style for the card container */
+        .card {
+            display: flex; /* Display cards in a row */
+            flex-wrap: wrap; /* Wrap cards to the next row if needed */
+            justify-content: center; /* Center align cards */
+        }
+
+        /* Style for each card */
+        .card-item {
+            flex: 0 0 calc(33.33% - 40px); /* Each card occupies about one-third of the container width with a bit of margin */
+            margin: 20px; /* Add margin between cards */
+            padding: 20px; /* Add padding to each card */
+            border: 1px solid #ddd; /* Add border for card */
+            border-radius: 8px; /* Add border radius for card */
+            box-sizing: border-box;
+            cursor: pointer; /* Change cursor to pointer on hover to indicate interactivity */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+            background-color: #fff; /* Card background color */
+        }
+
+            /* Style for card content */
+            .card-item strong {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #333; /* Category color */
+            }
+
+            .card-item ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .card-item li {
+                margin-bottom: 8px;
+            }
+
+            /* Style for links inside the card */
+            .card-item a {
+                color: #007bff;
+                text-decoration: none;
+                transition: color 0.3s ease; /* Smooth transition for text color change */
+            }
+
+                /* Hover effect for links */
+                .card-item a:hover {
+                    color: #ffa300;
+                }
+
+            /* Hover effect for the card */
+            .card-item:hover {
+                transform: translateY(-5px); /* Move card slightly upwards on hover */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Categories of Questions</h1>
+    <div class="card">
+        <ul>
+            {% for category, questions in categorized_questions.items() %}
+            <li class="card-item">
+                <strong>{{ category }}:</strong>
+                <ul>
+                    {% for question in questions %}
+                    <li>
+                        <a href="{{ url_for('question_detail', question_text=question.question_text) }}">{{ question.question_text }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+</body>
+</html>

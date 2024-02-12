@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Question</title>
+
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        /* Navigation sidebar */
+        html, body {
+            height: 100%; /* Set height of html and body to 100% */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .cone1 {
+            width: 25%;
+            height: 100%; /* Set height to 100% of its containing block (body) */
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            float: left;
+            transition: width 0.3s ease;
+        }
+
+
+
+        
+
+            .cone1 h3 {
+                margin-bottom: 10px;
+                font-size:30px;
+                color: white;
+                transition: color 0.3s ease;
+            }
+
+        cone1 ul {
+            list-style-type: none;
+            padding: 0;
+            color:white;
+            font-size: 20px;
+            margin: 0;
+        }
+
+                .cone1 ul li {
+                    margin-bottom: 10px;
+                    transition: background-color 0.3s ease;
+                }
+
+                    .cone1 ul li a {
+                        color: white;
+                        text-decoration: none;
+                        transition: color 0.3s ease;
+                    }
+
+                        .cone1 ul li a:hover {
+                            color: #FF9800;
+                        }
+
+                    .cone1 ul li:hover {
+                        background-color: rgba(255, 255, 255, 0.3);
+                    }
+
+        /* Main content area */
+        .cone2 {
+            width: 75%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 60%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #FF9800;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Form styling */
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        textarea,
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #FF9800;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Recent questions */
+        #recent-questions {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .question-item {
+            margin-bottom: 15px;
+            color: white; /* Question color */
+        }
+
+        .question-link {
+            color: #007bff; /* View details text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition on hover */
+        }
+
+            .question-link:hover {
+                color: #0056b3; /* View details text color on hover */
+                text-decoration: underline; /* Underline on hover */
+            }
+
+        /* Profile dropdown */
+        .dropdown {
+            position: relative;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .profile-icon {
+            background-color: darkgray;
+            border: hidden;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            justify-content: center;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            padding: 10px;
+            px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+            .dropdown-content h3 {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+
+            .dropdown-content p {
+                margin: 0;
+            }
+
+            .dropdown-content button {
+                background-color: #007bff;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+                .dropdown-content button:hover {
+                    background-color: #0056b3;
+                }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="maindivs">
+        <div class="cone1">
+            <h3>NLP Crafters</h3>
+            <ul>
+                <li><a href="/mainpage">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/team">Team details</a></li>
+                <li><a href="/view_categories">Categorized view</a></li>
+            </ul>
+        </div>
+        <div class="cone2">
+            <h1>Community question-answering platform</h1>
+            <!-- Search input -->
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="profile-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                        <path fill="currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                    </svg>
+                </button>
+                <div id="profile-dropdown" class="dropdown-content">
+                    <h3>You are logged in:</h3>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search questions...">
+                <button onclick="searchQuestions()">Search</button>
+            </div>
+            <form action="/store_question" method="post" enctype="multipart/form-data" onsubmit="return validateQuestion()">
+
+                <label for="question_text">Ask the Question:</label><br>
+                <textarea id="question_text" name="question_text" rows="4" cols="50"></textarea><br><br>
+                <label for="file1">Upload image (img/jpeg/png):</label><br>
+                <input type="file" id="file1" name="files"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+            <h2>User's Feed</h2>
+            <!-- Display recent questions -->
+            <div id="recent-questions">
+                <!-- Fetch and display questions from the database here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Get recent questions from the database and display them
+    fetch('/recent_questions')
+        .then(response => response.json())
+        .then(questions => {
+            const questionsDiv = document.getElementById('recent-questions');
+
+            questions.forEach(question => {
+                const questionItem = document.createElement('div');
+                
+                // Style the "Question" text in white
+                const questionText = document.createElement('span');
+                questionText.textContent = 'Question: ';
+                questionText.style.color = 'white';
+                questionItem.appendChild(questionText);
+                
+                // Style the ${question.question_text} in #283593 (dark blue)
+                const questionContent = document.createElement('span');
+                questionContent.textContent = question.question_text;
+                questionContent.style.color = 'darkbrown'; // Dark blue
+                questionItem.appendChild(questionContent);
+                
+                // Add a link to question details
+                const detailsLink = document.createElement('a');
+                detailsLink.href = `/question_detail/${encodeURIComponent(question.question_text)}`;
+                detailsLink.textContent = 'View Details';
+                
+                // Style the link in green
+                detailsLink.style.color = 'navy';
+                
+                questionItem.appendChild(detailsLink);
+                questionsDiv.appendChild(questionItem);
+            });
+        })
+    function searchQuestions() {
+    const searchTerm = document.getElementById('search-input').value;
+
+    // Fetch and display search results
+    fetch('/search_questions/' + encodeURIComponent(searchTerm))
+    .then(response => response.json())
+    .then(questions => {
+    const questionsDiv = document.getElementById('recent-questions');
+    questionsDiv.innerHTML = ''; // Clear previous content
+
+    if (questions.length > 0) {
+    questions.forEach(question => {
+    const questionItem = document.createElement('div');
+    questionItem.textContent = `Question: ${question.question_text}`;
+
+    // Add a link to question details
+
+
+    const detailsLink = document.createElement('a');
+    detailsLink.href = `/question_detail/${encodeURIComponent(question.question_text)}`;
+    detailsLink.textContent = 'View Details';
+    questionItem.appendChild(detailsLink);
+
+    questionsDiv.appendChild(questionItem);
+    });
+    } else {
+    // Handle the case where no results are found
+    questionsDiv.textContent = 'No questions found matching the search term.';
+    }
+    })
+    .catch(error => {
+    console.error('Error fetching search results:', error);
+    });
+    }
+
+    // Attach the searchQuestions function to the button's onclick event
+    document.getElementById('search-button').onclick = searchQuestions;
+
+    </script>
+    </div>
+    <script>
+        function validateQuestion() {
+            var questionText = document.getElementById("question_text").value;
+            var offensiveWords = ["18+", "romance", "dating", "fuck", "i love you","kill","porn","sex","poision","muddder","nude","nudity"]; // Add offensive words here
+            for (var i = 0; i < offensiveWords.length; i++) {
+                if (questionText.toLowerCase().includes(offensiveWords[i])) {
+                    alert("you are  not allowed to spoil our community.");
+                    return false; // Prevent form submission
+                }
+            }
+            return true; // Allow form submission
+        }
+
+    </script>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("profile-dropdown");
+            dropdownContent.classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.profile-icon')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function logout() {
+            // Perform logout action here, e.g., redirect to logout endpoint
+            window.location.href = "/logout";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: rgb(255 255 255 / 18%);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #FF9800;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+                transition-delay: 0.3s;
+            }
+
+        .signup-link {
+            margin-top: 20px;
+        }
+
+            .signup-link a {
+                color: #FF9800;
+                text-decoration: wavy;
+            }
+
+                .signup-link a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Sign Up</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/signup" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Sign Up">
+            </form>
+            <div class="signup-link">
+                <p>Already have an account? <a href="/login">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

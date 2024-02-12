@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Question-Answering Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: #fff;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgb(0 0 0 / 45%);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 95px;
+           padding: 50px;
+            background-color: rgba(255, 255, 255, 24%);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .Projecttext {
+            flex: 0 0 50%;
+            padding-right: 50px;
+        }
+
+        .Projecttext h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .Projecttext p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .KeyFeatures {
+            flex: 0 0 40%;
+        }
+
+        .KeyFeatures h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .KeyFeatures h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .KeyFeatures p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video id="video-background" autoplay muted loop>
+        <source src="videoplayback.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>ABOUT US</h1>
+    </header>
+
+    <section>
+        <div class="Projecttext">
+            <h1>Project Overview</h1>
+            <p>Create an interactive online platform designed to foster knowledge sharing, collaboration, and community engagement through a robust question and answer system. The platform aims to connect users with diverse expertise, providing a space for seeking solutions, sharing insights, and building a supportive community.</p>
+            <img src="static/assets/landingpic.jpg" alt="Project Image">
+        </div>
+
+        <div class="KeyFeatures">
+            <h2>Key Features</h2>
+            <div class="FeatureGroup">
+                <h3>User Interaction:</h3>
+                <p>User registration and profile creation. Intuitive question submission and detailed answers. Voting and ranking system for content quality.</p>
+            </div>
+            <div class="FeatureGroup">
+                <h3>Community Building:</h3>
+                <p>Categories and tags for organized content. Responsive design for seamless user experience. Gamification elements to enhance engagement.</p>
+            </div>
+            <div class="FeatureGroup">
+                <h3>Learning Environment:</h3>
+                <p>Continuous learning through questions and answers. Expertise recognition through reputation and badges. Commenting system for discussions and clarification.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

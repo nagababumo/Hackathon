@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+        }
+      
+      .outer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 20px;
+      }
+      
+      .section-head-text {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .section-subhead-text {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .team-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        border:dashed;
+        justify-content: center;
+      }
+      
+      .team-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px #0072c41a;
+        margin: 20px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        width: 300px; /* Fixed width for desktop */
+        border:double;
+      }
+      
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px #E6Af2E;
+      }
+      
+      .team-img {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+      }
+      
+      .text-container {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .position {
+        font-size: 18px;
+        color: white;
+        margin-bottom: 20px;
+      }
+      
+      .social-media-links {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .social-media-links a {
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+      }
+      
+      .social-media-links a:hover {
+        transform: scale(1.2);
+      }
+      
+      .social-media-links img {
+        width: 50px;
+        height: 30px;
+      }
+      
+      /* Media Query for Tablets */
+      @media (max-width: 1023px) {
+        .team-card {
+          width: calc(100% - 40px); /* Two cards per row on tablets */
+        }
+      }
+      
+      /* Media Query for Mobile Devices */
+      @media (max-width: 767px) {
+        .team-card {
+          width: calc(100% - 40px); /* One card per row on mobile devices */
+        }
+      }
+      
+      /* Media Query for Desktop Screens */
+      @media (min-width: 1024px) {
+        .team-card-container {
+          flex-direction: row; /* Display team cards in a row on desktop screens */
+        }
+      
+        .team-card {
+          margin: 20px; /* Adjust margin for better spacing between cards on desktop */
+        }
+      }</style>
+</head>
+
+<body>
+    <div class="responsive-container-block outer-container">
+        <div class="responsive-container-block inner-container">
+            <p class="text-blk section-head-text">
+                Meet Our Team
+            </p>
+            <p class="text-blk section-subhead-text">
+                AIDS section developers at kiet kakinada
+            </p>
+            <div class="responsive-container-block">
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                    <div class="row">
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/Benayaram Rekha.png">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Benayaram Rekha
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/benayaram" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rekha-benayaram/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/nagababu.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Nagababu moleti
+                                </p>
+                                <p class="text-blk position">
+                                    Backend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/nagababumo" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/nagababu-molleti-7b87aa228/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/saiteja.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Sai Teja Alle
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href=" https://github.com/allesaiteja" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/sai-teja-alle-651443246/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/adithyaram.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Adithya ram Malleli
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/rammallelli123" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/mallelli-adithya-ram-61a1b3229/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+
+                    </div>
+                    <div class="row">
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/karaun.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Ankem Karun Kumar
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/karunankem" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href=" https://www.linkedin.com/in/ankem-karuna-kumar-4bb508246/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/adthiya.JPG">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    M V R Adithya
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/adhi9848" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/aditya-naidu-83940228b/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/deeraj.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Kalyan Dheeraj 
+                                </p>
+                                <p class="text-blk position">
+                                    Backend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/bkalyandheeraj2003" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/bhupathi-raju-kalyandheeraj-167316270/" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image-wrapper">
+                                <img class="team-img" src="static/abhishek.jpeg.jpeg">
+                            </div>
+                            <div class="text-container">
+                                <p class="text-blk name">
+                                    Abhishek
+                                </p>
+                                <p class="text-blk position">
+                                    Frontend Developer
+                                </p>
+                                <div class="social-media-links">
+                                    
+                                   
+                                    <a href="https://github.com/abhishekgorinta" target="_blank">
+                                        <img
+                                            src="static/assets/GitHub.png">
+                                    </a>
+                                    <a href="https://www.linkedin.com" target="_blank">
+                                        <img
+                                            src="static/assets/li.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat this block for each team member -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF9800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    transition-delay: 0.3s;
+}
+
+.signup-link {
+    margin-top: 20px;
+    color: white;
+}
+
+.signup-link a {
+    color: #FF9800;
+    text-decoration: underline;
+}
+
+.signup-link a:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Login</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/login" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
